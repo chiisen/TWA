@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.aitemple.twa",
+            "sha256_cert_fingerprints": [
+                "EA:88:27:BA:64:EA:54:1C:70:C6:98:1D:C8:86:2F:D5:2D:17:D9:3C:EC:43:F9:6F:7A:95:0C:B7:8E:C9:6A:9C"
+            ]
+        }
+    }
+]
