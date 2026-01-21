@@ -87,5 +87,56 @@ the PWA:
 
 ? Domain: (ai-temple.vercel.app) 
 ```
+### Web App Manifest 欄位說明 (`android-app/manifest.json`)
 
+`manifest.json` 是 PWA (Progressive Web App) 的核心設定檔。當您要切換到不同的網站時，需要修改以下欄位：
 
+| 欄位 | 說明 | 修改前 | 修改後 |
+|------|------|--------|--------|
+| `short_name` | APP 簡短名稱 | `"AI Temple"` | `"Math Monsters Shooter"` |
+| `name` | APP 完整名稱 | `"AI Temple"` | `"Math Monsters Shooter"` |
+| `icons[].src` | 圖示 URL | `"https://ai-temple.vercel.app/icon.png"` | `"https://math-monsters-shooter.liawchiisen.workers.dev/icon.png"` |
+| `start_url` | 啟動網址 | `"https://ai-temple.vercel.app/"` | `"https://math-monsters-shooter.liawchiisen.workers.dev/"` |
+| `scope` | 作用範圍 | `"https://ai-temple.vercel.app/"` | `"https://math-monsters-shooter.liawchiisen.workers.dev/"` |
+| `description` | 描述文字 | `"AI Temple Application"` | `"Math Monsters Shooter Application"` |
+
+> ⚠️ **注意**：修改 `manifest.json` 後，也需要同步更新 `twa-manifest.json` 中的對應欄位（如 `host`、`name`、`iconUrl`、`fullScopeUrl` 等）。
+
+### 修改網址設定 (Updating URL Configuration)
+
+若之後需要修改 APP 開啟的網址，請編輯 `android-app/twa-manifest.json` 檔案：
+
+1.  **修改重要欄位**：
+    *   `host` (第 3 行): 您的網站主網域 (例如: `ai-temple.vercel.app`)。
+    *   `name` (第 4 行): APP 的名稱。
+    *   `shortName` (第 5 行): APP 的簡短名稱。
+    *   `startUrl` (第 15 行): APP 開啟後的初始路徑 (通常為 `/`)。
+    *   `fullScopeUrl` (第 35 行): APP 的作用範圍 (例如: `https://ai-temple.vercel.app/`)。
+    *   `iconUrl` (第 16 行): 圖示的網址路徑。
+
+2.  **套用變更**：
+    修改完 JSON 檔案後，在 `android-app` 目錄下執行以下指令來更新專案並重新建置：
+
+    > ⚠️ **重要提醒**：`bubblewrap update` 需要從 `twa-manifest.json` 中的 `webManifestUrl` 下載 manifest 檔案。
+    > 若 `webManifestUrl` 設定為本地位址（如 `http://localhost:8088/manifest.json`），
+    > 請**先啟動本地伺服器**，否則會出現 `Unexpected token '<', "<!DOCTYPE "... is not valid JSON` 錯誤。
+
+    ```bash
+    # 切換到 android-app 目錄
+    cd android-app
+
+    # 🚀 啟動本地 HTTP 伺服器（在另一個終端機視窗執行）
+    # 預設使用 port 8088，確保與 twa-manifest.json 中的 webManifestUrl 一致
+    npx -y http-server -p 8088 --cors
+
+    # 更新專案設定（在原本的終端機視窗執行）
+    bubblewrap update
+
+    # 重新建置 APK
+    bubblewrap build
+    ```
+
+    > 💡 **提示**：Port 8081 可能被 WSL 等其他服務佔用，建議使用 8088 或其他未被佔用的 port。
+
+---
+完成後，請告訴我，我將協助您進行下一個步驟。

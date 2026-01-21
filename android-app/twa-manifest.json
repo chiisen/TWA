@@ -1,8 +1,8 @@
 {
   "packageId": "com.aitemple.twa",
-  "host": "ai-temple.vercel.app",
-  "name": "AI Temple",
-  "launcherName": "AI Temple",
+  "host": "math-monsters-shooter.liawchiisen.workers.dev",
+  "name": "Math Monsters Shooter",
+  "launcherName": "Math Monsters Shooter",
   "display": "standalone",
   "themeColor": "#FFFFFF",
   "themeColorDark": "#000000",
@@ -13,17 +13,17 @@
   "backgroundColor": "#FFFFFF",
   "enableNotifications": true,
   "startUrl": "/",
-  "iconUrl": "https://ai-temple.vercel.app/icon.png",
+  "iconUrl": "https://math-monsters-shooter.liawchiisen.workers.dev/icon.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
     "path": "D:\\github\\chiisen\\TWA\\android-app\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "2",
+  "appVersionCode": 2,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
-  "webManifestUrl": "http://localhost:8081/manifest.json",
+  "webManifestUrl": "http://localhost:8088/manifest.json",
   "fallbackType": "customtabs",
   "features": {},
   "alphaDependencies": {
@@ -32,7 +32,7 @@
   "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
-  "fullScopeUrl": "https://ai-temple.vercel.app/",
+  "fullScopeUrl": "https://math-monsters-shooter.liawchiisen.workers.dev/",
   "minSdkVersion": 21,
   "orientation": "default",
   "fingerprints": [],
@@ -42,5 +42,5 @@
   "fileHandlers": [],
   "launchHandlerClientMode": "",
   "displayOverride": [],
-  "appVersion": "1"
+  "appVersion": "2"
 }
